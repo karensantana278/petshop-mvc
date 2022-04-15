@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %> 
-<body>
-    <%- include('../partials/header') %> 
-    <main>
-        <form action="/admin/servicos/acaoCadastrar" method="POST">
-            <label for="">Nome:</label>
-            <input type="text" name="nome" id="nome">
-            <label for="">Preco:</label>
-            <input type="text" name="preco" id="preco">
-            <label for="">Descricao:</label>
-            <input type="text" name="descricao" id="descricao">
+<%- include('../partials/head') %>
 
-            <button>Cadastrar</button>
-        </form>
-    </main>
-    <%- include('../partials/footer') %> 
-</body>
+    <body>
+        <%- include('../partials/header') %>
+            <main class="admin">
+                <div class="container">
+                    <h1>Painel Administrativo</h1>
+
+                    <form action="/admin/servicos/acaoCadastrar" method="POST" class="cadastroServico">
+                        <fieldset>
+                            <legend>Novo Serviço</legend>
+
+                            <div>
+                                <label for="nome">Nome:</label>
+                                <input type="text" name="nome" id="nome" required>
+                            </div>
+
+                            <div>
+                                <label for="preco">Preco:</label>
+                                <input type="text" name="preco" id="preco" required>
+                            </div>
+
+                            <div>
+                                <label for="descricao">Descricao:</label>
+                                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <button class="btn-cadastroServico">Cadastrar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>

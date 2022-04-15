@@ -5,41 +5,44 @@
 
     <body>
         <%- include('../partials/header') %>
-            <main>
-
-                <h1>Painel administrativo</h1>
-
-                <h2>Serviços</h2>
-
-                <a href="/admin/servicos/cadastrar">Adicionar novo</a>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Descricao</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (let servico of servicos) { %>
-                            <tr>
-                                <td><%= servico.nome %></td>
-                                <td><%= servico.preco %></td>
-                                <td><%= servico.descricao %></td>
-                                <td>
-                                    <a href="/admin/servicos/editar/<%= servico.id %>">Editar</a>
-                                    <a href="/admin/servicos/excluir/<%= servico.id %>">Excluir</a>
-                                </td>
-                            </tr>
-                        <% } %>
-
-                    </tbody>
-                </table>
-
+            <main class="admin">
+                <div class="container">
+                    <h1>Painel administrativo</h1>
+                    <section>
+                        <h2>Serviços</h2>
+                        <a href="/admin/servicos/cadastrar" class="adicionar">Adicionar novo</a>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Preço</th>
+                                    <th>Descricao</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let servico of servicos) { %>
+                                    <tr>
+                                        <td>
+                                            <%= servico.nome %>
+                                        </td>
+                                        <td>
+                                            <%= servico.preco %>
+                                        </td>
+                                        <td>
+                                            <%= servico.descricao %>
+                                        </td>
+                                        <td class="acoes-btn">
+                                            <a href="/admin/servicos/editar/<%= servico.id %>" class="acoes-btn-editar">Editar</a>
+                                            <a href="/admin/servicos/excluir/<%= servico.id %>" class="acoes-btn-excluir">Excluir</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
             </main>
-            <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>
     </body>
-
 </html>

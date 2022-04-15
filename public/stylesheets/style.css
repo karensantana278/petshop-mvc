@@ -265,3 +265,98 @@ section.contato a:any-link,
 section.contato p {
     color: #575757;
 }
+
+
+/* css style of admin pages */
+
+/*servicos*/
+
+main.admin .container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+main.admin h1 {
+    font-weight: 700;
+}
+
+main.admin h2 {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+main.admin section {
+    width: 100%;
+    padding: 50px 0;
+
+}
+
+main.admin section .adicionar{
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 10px 30px;
+}
+
+.acoes-btn{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.acoes-btn a{
+    text-decoration: none;
+    color:white;
+    padding: 5px 15px;
+}
+
+.acoes-btn-editar{
+    background-color: gray;
+}
+
+.acoes-btn-excluir{
+    background-color: red;
+}
+
+table {
+    width: 100%;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/*servicos cadastrar*/
+main.admin .cadastroServico{
+    width: 100%;
+}
+
+main.admin .cadastroServico fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+main.admin .cadastroServico input,
+main.admin .cadastroServico textarea
+{
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.btn-cadastroServico{
+    width: 250px;
+    background-color: green;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+main.admin{
+    margin-bottom: 50px;
+}
+
