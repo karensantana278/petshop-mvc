@@ -28,8 +28,10 @@
                                 <td><%= servico.nome %></td>
                                 <td><%= servico.preco %></td>
                                 <td><%= servico.descricao %></td>
-                                <td><a href="">Editar</a></td>
-                                <td><a href="">Excluir</a></td>
+                                <td>
+                                    <a href="/admin/servicos/editar/<%= servico.id %>">Editar</a>
+                                    <a href="/admin/servicos/excluir/<%= servico.id %>">Excluir</a>
+                                </td>
                             </tr>
                         <% } %>
 
