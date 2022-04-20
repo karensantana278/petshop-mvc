@@ -4,7 +4,7 @@ var router = express.Router();
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const servicos = []
+let servicos = []
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -27,7 +27,6 @@ router.get('/admin/servicos/cadastrar', (req, res) => {
 })
 
 router.post('/admin/servicos/acaoCadastrar', upload.single("imagemServico"), (req, res) => {
-    console.log(req.file)
     const nome = req.body.nome
     const preco = req.body.preco
     const descricao = req.body.descricao
@@ -41,10 +40,13 @@ router.post('/admin/servicos/acaoCadastrar', upload.single("imagemServico"), (re
         imagem: imagem
     }
     
-
-
     servicos.push(objServico)
     res.redirect('/admin/servicos')
+})
+
+router.get('/admin/servicos/excluir/:idServico',  function(req,res){
+ servicos = servicos.filter((servico) => servico.id != req.params.idServico)
+res.redirect('/admin/servicos')
 })
 
 module.exports = router;
