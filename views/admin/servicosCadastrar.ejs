@@ -8,7 +8,7 @@
                 <div class="container">
                     <h1>Painel Administrativo</h1>
 
-                    <form action="/admin/servicos/acaoCadastrar" method="POST" class="cadastroServico">
+                    <form action="/admin/servicos/acaoCadastrar" method="POST" class="cadastroServico" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Novo Serviço</legend>
 
@@ -20,6 +20,11 @@
                             <div>
                                 <label for="preco">Preco:</label>
                                 <input type="text" name="preco" id="preco" required>
+                            </div>
+
+                            <div>
+                                <label for="imagem">Imagem:</label>
+                                <input type="file" name="imagemServico"  required>
                             </div>
 
                             <div>

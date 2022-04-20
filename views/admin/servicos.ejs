@@ -14,6 +14,7 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th>Imagem</th>
                                     <th>Nome</th>
                                     <th>Preço</th>
                                     <th>Descricao</th>
@@ -23,6 +24,9 @@
                             <tbody>
                                 <% for (let servico of servicos) { %>
                                     <tr>
+                                        <td>
+                                            <img src="/uploads/<%= servico.imagem %>" alt="" width="100">
+                                        </td>
                                         <td>
                                             <%= servico.nome %>
                                         </td>
