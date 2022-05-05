@@ -1,7 +1,13 @@
 const bcrypt = require("bcryptjs");
 const req = require("express/lib/request");
 
-const bancoUsuarios = [];
+const bancoUsuarios = [
+    {
+        login: "admin",
+        nome: "Administrador",
+        senha: bcrypt.hashSync("123456")
+    }
+];
 
 const UsuarioController = {
     cadastrar: (req, res) => {
@@ -28,14 +34,15 @@ const UsuarioController = {
 
         const usuarioEncontrado = bancoUsuarios.find((obj) => obj.login == login);
         if(usuarioEncontrado == null){
-            res.redirect("/admin/login");
+            res.redirect("/login");
         }else{
             const resultado = bcrypt.compareSync(senha, usuarioEncontrado.senha);
             if(resultado){
                 req.session.loginUsuario = usuarioEncontrado.login;
                 req.session.nomeUsuario = usuarioEncontrado.nome;
+                res.redirect("/admin/servicos");
             }else{
-                res.redirect("/admin/login");
+                res.redirect("/login");
             }
         }
     },

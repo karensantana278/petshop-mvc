@@ -3,8 +3,6 @@ const path = require("path");
 var multer = require('multer');
 var router = express.Router();
 const { v4: uuidv4 } = require('uuid');
-var UsuarioController = require("../controllers/usuarioController");
-
 let servicos = [];
 
 const storage = multer.diskStorage({
@@ -18,15 +16,15 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.get('/admin/servicos', (req,res) => {
+router.get('/servicos', (req,res) => {
     res.render('admin/servicos', {servicos: servicos})
 })
 
-router.get('/admin/servicos/cadastrar', (req, res) => {
+router.get('/servicos/cadastrar', (req, res) => {
     res.render('admin/servicosCadastrar')
 })
 
-router.post('/admin/servicos/acaoCadastrar', upload.single("imagemServico"), (req, res) => {
+router.post('/servicos/acaoCadastrar', upload.single("imagemServico"), (req, res) => {
     const nome = req.body.nome
     const preco = req.body.preco
     const descricao = req.body.descricao
@@ -44,7 +42,7 @@ router.post('/admin/servicos/acaoCadastrar', upload.single("imagemServico"), (re
     res.redirect('/admin/servicos')
 })
 
-router.get("/admin/servicos/excluir/:idServico", function(req, res){
+router.get("/servicos/excluir/:idServico", function(req, res){
     servicos = servicos.filter((servico) => servico.id != req.params.idServico);
 
     res.redirect("/admin/servicos")
