@@ -8,30 +8,21 @@
                 <div class="container">
                     <h1>Painel Administrativo</h1>
 
-                    <form action="/admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST" class="cadastroServico">
+                    <form action="/admin/usuarios/acaoCadastrar" method="POST" class="cadastroServico">
                         <fieldset>
-                            <legend>Novo Serviço</legend>
-
+                            <legend>Novo Usuário</legend>
                             <div>
                                 <label for="nome">Nome:</label>
                                 <input type="text" name="nome" id="nome" required>
                             </div>
-
                             <div>
-                                <label for="preco">Preco:</label>
-                                <input type="text" name="preco" id="preco" required>
+                                <label for="login">Login:</label>
+                                <input type="text" name="login" id="login" required>
                             </div>
-
                             <div>
-                                <label>Imagem</label>
-                                <input type="file" name="imagemServico" />
+                                <label for="senha">Senha:</label>
+                                <input type="password" name="senha" id="senha" required>
                             </div>
-
-                            <div>
-                                <label for="descricao">Descricao:</label>
-                                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-                            </div>
-
                             <button class="btn-cadastroServico">Cadastrar</button>
                         </fieldset>
                     </form>
